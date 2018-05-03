@@ -89,7 +89,7 @@ public class TwoSum{
         sort(a,lo,j-1,b);
         sort(a,j+1,hi,b);
     }
-    public void shuffle(int[] a,int[] b){                          //不写shuffle 数据有序的话就会栈溢出
+    public void shuffle(int[] a,int[] b){                          //不写shuffle 数据有序的话就会栈溢出,最坏复杂的O(n2)
         for(int i = 0 ;i < a.length;i++){
             int x = (int)(Math.random()*(i+1));
             exch(a,i,x);
