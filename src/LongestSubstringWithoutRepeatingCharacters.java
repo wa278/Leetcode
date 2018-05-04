@@ -5,10 +5,10 @@ import java.util.Set;
 import java.util.Map;;
 
 /**
- * Created by wa941 on 2018/5/4.
+ * Created by wa941 on 2018/5/4. 第一次接触滑动窗口
  */
 public class LongestSubstringWithoutRepeatingCharacters {
-    /*我的算法 时间复杂度O（n) 至多2n;
+    /*我的算法 时间复杂度O（n) 至多2n; 离最厉害的算法就差一步
     public static int lengthOfLongestSubstring(String s) {
         Hashtable<Character,Integer> myTable = new Hashtable<>();
         if(s.equals("")){
