@@ -1,6 +1,6 @@
 /**
  * Created by wa941 on 2018/5/6. // 不需要直接操作字符串，只需要记录索引就可以
- * 用左右作为变量，不用考虑奇数偶数，是奇数左等于右。
+ * 用左右作为变量，不用考虑奇数偶数，是奇数左等于右。。
  */
 public class LongestPalindromicSubstring {
     public String longestPalindrome(String s) {
