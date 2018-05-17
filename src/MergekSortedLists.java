@@ -5,7 +5,7 @@
 合并n 个有序数据流 用heap.时间复杂度O（mlog(n)) m是总数据。好处是时间复杂度比正常排序O(mlogm)低，并且不需要一次读入全部数据。
  */
 public class MergekSortedLists {
-    public ListNode mergeKLists(ListNode[] lists) {
+    /*public ListNode mergeKLists(ListNode[] lists) {
         int N = lists.length;
         IndexMinPQ myPQ = new IndexMinPQ(N);
         ListNode index = new ListNode(0);
@@ -104,6 +104,66 @@ public class MergekSortedLists {
         lists[2] = new ListNode(2);
         lists[2].next = new ListNode(6);
         ListNode result = a.mergeKLists(lists);
+        int c = 2 ;
+    }*/
+    /*
+    自下而上的归并排序。归并每进行一次，复杂度是O(n),一共要进行LOg(m)次。
+
+     */
+    public ListNode mergeKLists(ListNode[] lists){
+        if(lists.length == 0){
+            return null;
+        }
+        for(int i = 1; i < lists.length; i= i + i){
+            for(int j = 0; j + i< lists.length;j = j + 2 * i){
+                lists[j] = merge(lists[j],lists[j+i]);
+            }
+        }
+        return lists[0];
+    }
+    public ListNode merge(ListNode l1, ListNode l2){
+        if(l1 == null){
+            return l2;
+        }
+        else if(l2 == null){
+            return l1;
+        }
+        ListNode result = new ListNode(0);
+        ListNode head = result;
+        while (l1 != null || l2 != null){
+            if(l1 == null){
+                head.next = new ListNode(l2.val);
+                l2 = l2.next;
+            }
+            else if(l2 == null){
+                head.next = new ListNode(l1.val);
+                l1 = l1.next;
+            }
+            else if(l1.val < l2.val){
+                head.next = new ListNode(l1.val);
+                l1 = l1.next;
+            }
+            else{
+                head.next = new ListNode(l2.val);
+                l2 = l2.next;
+            }
+            head = head.next;
+        }
+        return result.next;
+    }
+    public static void main(String[] args) {
+        MergekSortedLists a = new MergekSortedLists();
+        ListNode[] lists = new ListNode[3];
+        lists[0] = new ListNode(1);
+        lists[0].next = new ListNode(4);
+        lists[0].next.next = new ListNode(5);
+        lists[1] = new ListNode(1);
+        lists[1].next = new ListNode(3);
+        lists[1].next.next = new ListNode(4);
+        lists[2] = new ListNode(2);
+        lists[2].next = new ListNode(6);
+        ListNode[] ss = new ListNode[0] ;
+        ListNode result = a.mergeKLists(ss);
         int c = 2 ;
     }
 }
