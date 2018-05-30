@@ -1,5 +1,5 @@
 /**
- * Created by wa941 on 2018/5/30.
+ * Created by wa941 on 2018/5/30.杨辉三角
  */
 public class MinimumPathSum {
     public int minPathSum(int[][] grid) {
