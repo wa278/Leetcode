@@ -20,6 +20,7 @@ public class JumpGame {
 //    }
     /*
     贪心算法。
+    当从前向后需要递归算法时，可以尝试从后向前。
      */
     public static boolean canJump(int[] nums) {
         int lastPos = nums.length - 1;
