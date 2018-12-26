@@ -1,4 +1,4 @@
-package Array;
+package Binary_Search;
 
 //分两种情况 如果 num[mid] 和target 属于的部分相同，就按二分查找
 //如果num[mid] 和 target属于的部分不同，就在mid 的另一边查找。
