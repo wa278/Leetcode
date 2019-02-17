@@ -1,7 +1,5 @@
 package Array;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 import java.util.Arrays;
 
 public class Next_Permutation {
