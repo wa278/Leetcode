@@ -5,7 +5,7 @@ public class Add_Two_Numbers {
         ListNode head = new ListNode(0);
         ListNode index = head;
         int flag = 0;
-        while (l1 != null || l2 != null) {
+        while (l1 != null || l2 != null || flag == 1) {
             int a = (l1 == null) ? 0 : l1.val;
             int b = (l2 == null) ? 0 : l2.val;
             ListNode number = new ListNode((a + b + flag) % 10);
@@ -16,9 +16,6 @@ public class Add_Two_Numbers {
                 l1 = l1.next;
             if (l2 != null)
                 l2 = l2.next;
-        }
-        if (flag == 1) {
-            index.next = new ListNode(1);
         }
         return head.next;
     }
