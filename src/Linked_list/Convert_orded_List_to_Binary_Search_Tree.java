@@ -1,6 +1,6 @@
 package Linked_list;
 
-public class Convert_orted_List_to_Binary_Search_Tree {
+public class Convert_orded_List_to_Binary_Search_Tree {
     public TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
             return null;
@@ -34,7 +34,7 @@ public class Convert_orted_List_to_Binary_Search_Tree {
         x.next.next = new ListNode(0);
         x.next.next.next = new ListNode(5);
         x.next.next.next.next = new ListNode(9);
-        Convert_orted_List_to_Binary_Search_Tree a = new Convert_orted_List_to_Binary_Search_Tree();
+        Convert_orded_List_to_Binary_Search_Tree a = new Convert_orded_List_to_Binary_Search_Tree();
         TreeNode k = a.sortedListToBST(x);
     }
 }
