@@ -1,4 +1,4 @@
-package Array;
+package Two_Pointers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
