@@ -66,10 +66,10 @@ public class LongestSubstringWithoutRepeatingCharacters {
         // try to extend the range [i, j]
         for (int j = 0, i = 0; j < n; j++) {
             if (map.containsKey(s.charAt(j))) {
-                i = Math.max(map.get(s.charAt(j)), i);// 如果找到的值比左区间小，就不动。比左区间大则变动左区间。
+                i = Math.max(map.get(s.charAt(j))+1, i);// 如果找到的值比左区间小，就不动。比左区间大则变动左区间。
             }
             ans = Math.max(ans, j - i + 1);
-            map.put(s.charAt(j), j + 1);
+            map.put(s.charAt(j), j);
         }
         return ans;
     }
