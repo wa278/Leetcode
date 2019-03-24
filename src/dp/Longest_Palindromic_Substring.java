@@ -1,5 +1,6 @@
 package dp;
-//dp[i][j] 表示 从i到j是否是回文的      dp[i][j] = dp[i+1][j-1] && s[i]==s[j]       起始条件是 1 dp[i][i] == true 2 dp[i][i+1] = s[i] == s[i+1]
+//dp[i][j] 表示 从i到j是否是回文的      dp[i][j] = dp[i+1][j-1] && s[i]==s[j] if j-i >=2
+//                                            = s[i] == s[j]   if j-i <2
 public class Longest_Palindromic_Substring {
     public String longestPalindrome(String s) {
         //dp算法 o(n2) 54 ms
