@@ -72,7 +72,7 @@ public class TrappingRainWater {
 //        return result;
 //    }
     /*
-    2点法，每次都在两边选择峰值，另一边一定更大，只考虑一侧即可，时间复杂度O（n)
+    2点法，每次都在两边选择峰值，选择更小的峰值，另一边一定更大，只考虑一侧即可，时间复杂度O（n)
      */
     public static int trap (int[] height){
         int result = 0;

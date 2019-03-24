@@ -1,3 +1,5 @@
+package Two_Pointers;
+
 import javax.annotation.processing.SupportedSourceVersion;
 
 /**
@@ -7,7 +9,7 @@ import javax.annotation.processing.SupportedSourceVersion;
 快速排序尽量减少无意义的交换
  */
 public class SortColors {
-//    public void sortColors(int[] nums) {
+    //    public void sortColors(int[] nums) {
 //        shuffle(nums);
 //        sort(nums,0,nums.length-1);
 //    }
@@ -55,7 +57,7 @@ public class SortColors {
 //    }
 //
 //    public static void main(String[] args) {
-//        SortColors x = new SortColors();
+//        Two_Pointers.SortColors x = new Two_Pointers.SortColors();
 //        int[] nums = {2,0,1};
 //        x.sortColors(nums);
 //        for(int e : nums){
@@ -74,40 +76,24 @@ public class SortColors {
         i++
 
      */
-    public void sortColors(int[] nums){
-        Quick3Way(nums,0,nums.length-1);
-    }
-    public void Quick3Way(int[]nums, int lo, int hi){
-        if(hi <= lo){
-            return;
-        }
-        int v = nums[lo];
-        int lt = lo;
-        int gt = hi;
-        int i = lo;
-        while (i <= gt){
-            if(nums[i] == v){
-                i++;
-            }
-            else if(nums[i] < v){
-                exch(nums,lt++,i++);
-            }
-            else {
-                exch(nums,gt--,i);
+    public void sortColors(int[] nums) {
+        int red = 0;
+        int blue = nums.length - 1;
+        for (int i = 0; i <= blue; i++) {
+            if (nums[i] == 0) {
+                exch(nums, red, i);
+                red++;
+            } else if (nums[i] == 2) {
+                exch(nums, blue, i);
+                blue--;
+                i--;
             }
         }
-        Quick3Way(nums,lo,lt-1);
-        Quick3Way(nums,gt+1,hi);
-    }
-    public void exch(int[] nums, int i, int j){
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
     }
 
-    public static void main(String[] args) {
-        SortColors x = new SortColors();
-        int[] nums = {2,0,2,1,10};
-        x.sortColors(nums);
+    public void exch(int[] nums, int a, int b) {
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
     }
 }
