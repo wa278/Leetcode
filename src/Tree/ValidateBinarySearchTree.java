@@ -12,20 +12,20 @@ public class ValidateBinarySearchTree {
         validHelper(root);
         return bool;
     }
-    public void validHelper(TreeNode root){
-        if(root.left != null){
+
+    public void validHelper(TreeNode root) {
+        if (root.left != null) {
             validHelper(root.left);
         }
-        if(pre == null){
+        if (pre == null) {
             pre = root;
-        }
-        else {
-            if(pre.val >= root.val){
+        } else {
+            if (pre.val >= root.val) {
                 bool = false;
             }
             pre = root;
         }
-        if(root.right != null){
+        if (root.right != null) {
             validHelper(root.right);
         }
     }

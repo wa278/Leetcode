@@ -4,12 +4,13 @@ import Tree.TreeNode;
 
 public class FlattenBinaryTreetoLinkedList {
     TreeNode pre = null;
+
     public TreeNode flatten(TreeNode pRootOfTree) {
         if (pRootOfTree == null) {
             return null;
         }
         inOrder(pRootOfTree);
-        while (pre.left !=null){
+        while (pre.left != null) {
             pre = pre.left;
         }
         return pre;
@@ -20,7 +21,7 @@ public class FlattenBinaryTreetoLinkedList {
             inOrder(pRootOfTree.left);
         }
         pRootOfTree.left = pre;
-        if(pre != null){
+        if (pre != null) {
             pre.right = pRootOfTree;
         }
         pre = pRootOfTree;

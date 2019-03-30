@@ -11,17 +11,19 @@ import Tree.TreeNode;
  */
 public class BinaryTreeMaximumPathSum {
     int result = Integer.MIN_VALUE;
+
     public int maxPathSum(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
         maxSubPath(root);
         return result;
     }
-    public int maxSubPath(TreeNode root){
-        int left = root.left == null? 0:Math.max(maxSubPath(root.left),0);
-        int right = root.right == null? 0:Math.max(maxSubPath(root.right),0);
-        result = Math.max(result,left + root.val+right);
-        return Math.max(left + root.val,right+root.val);
+
+    public int maxSubPath(TreeNode root) {
+        int left = root.left == null ? 0 : Math.max(maxSubPath(root.left), 0);
+        int right = root.right == null ? 0 : Math.max(maxSubPath(root.right), 0);
+        result = Math.max(result, left + root.val + right);
+        return Math.max(left + root.val, right + root.val);
     }
 }
