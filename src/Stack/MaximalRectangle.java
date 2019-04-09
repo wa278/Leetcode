@@ -1,3 +1,5 @@
+package Stack;
+
 import java.util.Stack;
 /*
 用 最大矩形做这道题
