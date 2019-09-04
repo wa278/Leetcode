@@ -7,21 +7,15 @@ public class Palindromic_Substrings {
         int m = s.length();
         boolean[][] dp = new boolean[m][m];
         int sum = 0;
-        for (int i = 0; i < m; i++) {
-            dp[i][i] = true;
-            sum++;
-        }
-        for (int i = 0; i + 1 < m; i++) {
-            if (s.charAt(i) == s.charAt(i + 1)) {
-                dp[i][i + 1] = true;
-                sum++;
-            }
-        }
-        for (int i = 2; i < m; i++) {
-            for (int j = m - 1 - i; j >= 0; j--) {
-                if (s.charAt(j) == s.charAt(j + i)) {
-                    dp[j][j + i] = dp[j + 1][j + i - 1];
-                    sum = dp[j][j + i] ? sum + 1 : sum;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            for (int j = i; j < s.length(); j++) {
+                if (j - i < 2) {
+                    dp[i][j] = s.charAt(i) == s.charAt(j);
+                } else {
+                    dp[i][j] = dp[i + 1][j - 1] && s.charAt(i) == s.charAt(j);
+                }
+                if (dp[i][j]) {
+                    sum++;
                 }
             }
         }
@@ -29,6 +23,6 @@ public class Palindromic_Substrings {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Palindromic_Substrings().countSubstrings("abc"));
+        System.out.println(new Palindromic_Substrings().countSubstrings("aaa"));
     }
 }
