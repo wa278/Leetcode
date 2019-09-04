@@ -1,21 +1,14 @@
 package dp;
 
-//dp[i] 代表第i个数字中1的个数。    dp[i] = dp[i-2(log2 (i))向下取整]+1
+//dp[i] 代表第i个数字中1的个数。    dp[i] = dp[i/2] + i%2;
 public class Counting_Bits {
     public int[] countBits(int num) {
         int[] dp = new int[num + 1];
         if (num == 0) {
             return dp;
         }
-        int k = 0;
-        int m = 2;
-        dp[1] = 1;
-        for (int i = 2; i <= num; i++) {
-            dp[i] = 1 + dp[k++];
-            if (k == m) {
-                m *= 2;
-                k = 0;
-            }
+        for(int i = 1; i < num+1; i++){
+            dp[i] = dp[i >> 1] + (i & 1);
         }
         return dp;
     }
