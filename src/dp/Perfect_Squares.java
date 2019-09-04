@@ -1,5 +1,5 @@
 package dp;
-
+//dp[i] = min(dp[i-num]+1,dp[i]) num 是一个平方数。
 public class Perfect_Squares {
     public int numSquares(int n) {
         double x = Math.sqrt(n);
