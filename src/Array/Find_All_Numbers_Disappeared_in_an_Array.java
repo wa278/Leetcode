@@ -2,7 +2,7 @@ package Array;
 
 import java.util.LinkedList;
 import java.util.List;
-
+//注意交换的两个位置数字相同时要跳过，否则死循环。
 public class Find_All_Numbers_Disappeared_in_an_Array {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> result = new LinkedList<>();

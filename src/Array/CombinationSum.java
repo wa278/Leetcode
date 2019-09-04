@@ -2,7 +2,7 @@ package Array;
 
 import java.util.LinkedList;
 import java.util.List;
-
+//递归 + 回溯法
 public class CombinationSum {
     List<List<Integer>> result = new LinkedList<>();
 

@@ -2,7 +2,7 @@ package Array;
 
 import java.util.HashSet;
 import java.util.Set;
-
+// 每次从连续数字最左开始找起
 public class Longest_Consecutive_Sequence {
     public int longestConsecutive(int[] nums) {
         Set<Integer> num_set = new HashSet<Integer>();
