@@ -1,7 +1,7 @@
 package Array;
 
 import java.util.Arrays;
-
+//全排列问题 从后至前找到不按递减排序的数字，与其后 比其稍大的数字交还， 对其后所有数字排序。
 public class Next_Permutation {
     public void nextPermutation(int[] nums) {
         for (int i = nums.length - 1; i >= 1; i--) {
