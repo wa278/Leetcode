@@ -1,5 +1,6 @@
 package Array;
 
+//难点空间复杂度，o(n)
 public class Product_of_Array_Except_Self {
     public int[] productExceptSelf(int[] nums) {
         int[] result = new int[nums.length];
