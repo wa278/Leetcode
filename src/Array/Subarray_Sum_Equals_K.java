@@ -2,7 +2,7 @@ package Array;
 
 
 import java.util.HashMap;
-
+//无序数组中找到连续子数字等于k. sum(i,j)=sum(0,j)-sum(0,i);即找到之前的子数组中是否有sum(0,j) - k;
 public class Subarray_Sum_Equals_K {
     public int subarraySum(int[] nums, int k) {
         HashMap<Integer, Integer> hashMap = new HashMap<>();
