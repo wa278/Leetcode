@@ -1,5 +1,5 @@
 package Array;
-
+//回溯法一般都传进index用来判断是否查找到。
 public class WordSearch {
     public boolean exist(char[][] board, String word) {
         char[] str = word.toCharArray();
