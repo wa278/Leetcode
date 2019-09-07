@@ -1,7 +1,7 @@
 package Array;
 
 import java.util.Stack;
-
+//只需找到两侧的边界，有比左边界小的数，则左边边界左移。有边界同理。用栈可以很好的描述这种关系
 public class Shortest_Unsorted_Continuous_Subarray {
     public int findUnsortedSubarray(int[] nums) {
         Stack<Integer> stack = new Stack<>();
