@@ -1,5 +1,5 @@
 package Binary_Search;
-
+//二分法，四个数字，判断边界 0， len的情况。
 public class MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if (nums1.length > nums2.length) {
